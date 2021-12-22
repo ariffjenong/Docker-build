@@ -38,5 +38,6 @@ jobs:
           push: true
           tags: c3eru/prjkt:latest
 
+
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
