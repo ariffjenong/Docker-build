@@ -21,7 +21,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: 20020214
+          username: c3eru
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
       - name: Set up Docker Buildx
@@ -36,7 +36,7 @@ jobs:
           file: ./Dockerfile
           run: echo ${{ secrets.RCLONE }} > ~/.config/rclone/rclone.conf
           push: true
-          tags: 20020214/lynzx:latest
+          tags: c3eru/prjkt:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
