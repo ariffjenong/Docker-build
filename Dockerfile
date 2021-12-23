@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:hirsute
 
 LABEL maintainer="I-n-o-k <inok.dr189@gmail.com>"
 
@@ -39,8 +39,6 @@ RUN /usr/sbin/locale-gen
 RUN ln -snf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 RUN echo Asia/Jakarta > /etc/timezone
 RUN apt install sudo git -yqq
-RUN git config --global user.name I-n-o-k
-RUN git config --global user.email inok.dr189@gmail.com
 RUN git clone https://github.com/akhilnarang/scripts /tmp/scripts
 WORKDIR /tmp/scripts
 RUN bash setup/android_build_env.sh
